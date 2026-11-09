@@ -29,6 +29,13 @@ class ProjectReader:
             for dependency in data["dependency-groups"]["dev"]
         ]
 
+        license = project_data["license"]
+
+        authors = [
+            author["name"]
+            for author in project_data["authors"]
+        ]
+
         # deserialisoi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
-        return Project(name, description, dependencies, dev_dependencies)
+        return Project(name, description, dependencies, dev_dependencies, license, authors)
     

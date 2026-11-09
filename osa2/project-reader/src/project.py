@@ -1,11 +1,11 @@
 class Project:
-    def __init__(self, name, description, dependencies, dev_dependencies, license=None, authors=None):
+    def __init__(self, name, description, dependencies, dev_dependencies, license, authors):
         self.name = name
         self.description = description
         self.dependencies = dependencies
         self.dev_dependencies = dev_dependencies
         self.license = license
-        self.authors = authors or []
+        self.authors = authors
 
     def _stringify_list(self, items):
         return "\n".join(f"- {item}" for item in items) if items else "-"
